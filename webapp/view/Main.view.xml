@@ -1,15 +1,31 @@
 <mvc:View
 	controllerName="my.app.controller.Main"	
 	xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    xmlns:m="sap.m">
-    <m:App>
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m">
+	<m:App id="app-container" class="appContainer">
 		<m:pages>
-			<m:Page title="{i18n>appTitle}">
+			<m:Page 
+				enableScrolling="true"
+				title="{i18n>appTitle}">
 				<m:content>
-					<core:Fragment fragmentName='my.app.fragment.Initial' type='XML'/>
+
+					<!-- I opted to separate level_one and level_two as tabs for convenience -->
+					<m:IconTabBar expandable="true">
+						<m:items>
+							<!-- level_one -->
+							<m:IconTabFilter text="{i18n>tabLabelLevel1}">
+								<core:Fragment fragmentName='my.app.fragment.Survey' type='XML'/>
+							</m:IconTabFilter>
+							<!-- level_two -->
+							<m:IconTabFilter text="{i18n>tabLabelLevel2}">
+								<m:Text text="{i18n>TODO create content}"/>
+							</m:IconTabFilter>
+						</m:items>
+					</m:IconTabBar>
+
 				</m:content>
 			</m:Page>
 		</m:pages>
-    </m:App>
+	</m:App>
 </mvc:View>

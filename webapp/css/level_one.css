@@ -1,0 +1,124 @@
+/*
+	Level 1
+*/
+
+/* Header Toolbar container */
+.level_one .headerToolbar {
+	display: flex;
+	align-items: center;
+}
+
+/* Header logo */
+.level_one .logo{
+	height: var(--height_logo);
+}
+
+/* Header Title */
+.level_one .headerTitle {
+	font-weight: bold;
+	font-size: var(--font_size_header);
+}
+
+/* Progress bar */
+.level_one .headerProgressBar {
+	font-size: var(--font_size_progressbar);
+	color: var(--color_inverted);
+	height: var(--height_progressbar);
+	width: var(--width_progressbar);
+}
+
+/* Progress bar background (progress background) */
+.level_one .headerProgressBar::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	height: var(--height_progressbar);
+	width: var(--width_progressbar);
+	background-color: var(--background_color_logo);
+}
+
+/* Progress bar background (remaining background) */
+.level_one .headerProgressBar::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	height: var(--height_progressbar);
+	/* Width calculation based on remaining progress percentage value converted to pixels - assuming that CSS variable is integer */
+	width: calc((100 - var(--value_progressbar)) * var(--value_progressbar_max) * 0.01 * 1px);
+	background-color: var(--background_color_emphasized);
+}
+
+/* Progress bar label (percentage). Dynamic positioning - is centered in the middle of red background */
+.level_one .headerProgressBar bdi {
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	line-height: var(--height_progressbar);
+	height: var(--height_progressbar);
+	width: var(--width_progressbar_label);
+	/* using padding guarantees that even negative values will anchor text to 0 position */
+	padding-left: calc(1% * var(--value_progressbar) * 0.5 - var(--width_progressbar_label));
+}
+
+/* Question Asterix */
+.level_one .questionTitle {
+	font-weight: bold;
+	font-size: var(--font_size_subheader);
+}
+
+/* Question Title */
+.level_one .questionRequired {
+	font-weight: bold;
+	font-size: var(--font_size_subheader);
+}
+
+/* Question Description */
+.level_one .questionDescription {
+	/* ... */
+}
+
+/* Question ComboBox */
+.level_one .questionComboBox {
+	/* ... */
+}
+
+/* Action button - base */
+.level_one .actionButton {
+	font-family: var(--font_family_button);
+	font-size: var(--font_size_inner);
+	opacity: var(--opacity_inner);
+	color: var(--color_inverted);
+	border-color: var(--background_color_button);
+	border-style: var(--border_style_button);
+	border-width: var(--border_width_button);
+	background-color: var(--background_color_button);
+}
+
+/* Action button - pointer */
+.level_one .actionButton:not([disabled='disabled']),
+.level_one .actionButton:not([disabled='disabled']) .sapMBtnIcon {
+	cursor: pointer;
+}
+
+/* Action button - disabled */
+.level_one .actionButton[disabled='disabled'] {
+	opacity: var(--opacity_inner_hover);
+	color: var(--color_gray);
+	border-color: var(--color_gray);
+	background-color: var(--background_color_button_disabled);
+}
+
+/* Action button - hover */
+.level_one .actionButton:hover {
+	opacity: var(--opacity_inner_hover);
+}
+
+/* Action button - previous page */
+.level_one .actionButton.previous {
+	padding-right: var(--font_size_inner);
+}
+
+/* Action button - next page */
+.level_one .actionButton.next {
+	padding-left: var(--font_size_inner);
+}

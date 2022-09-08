@@ -1,0 +1,20 @@
+/*
+	Override SAPUI5 styles
+*/
+
+/* Override default gray background of IconTabBar and change to different color */
+.appContainer .sapMITBContent {
+	background-color: var(--background_color_default);
+}
+
+/* Override borders of multiple controls and make them invisible */
+.sapMIBar .sapMTBStandard {
+	border: none;
+}
+
+/* Override icon color of sap.m.Button and make it inherit custom color from parent
+   Override icon font-size and set different value */
+.sapMBtnBase.actionButton .sapMBtnIcon {
+	color: inherit;
+	font-size: var(--font_size_inner);
+} 

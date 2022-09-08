@@ -1,0 +1,158 @@
+<core:FragmentDefinition id="fsdfs"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m" 
+	>
+
+	<!-- Survey page -->
+	<m:Panel id="survey-container" class="level_one">
+
+		<!-- Header 
+			* After I finished this task I though it would be nicer if parts of this header would be hidden after the survey has been completed,
+				but then I realized the header was probably only supposed to be seen on first page. So I left it as is but added the additional flavor to hide text on last page,
+				even though it would probably make more sense to just edit this existing header text instead of revealing a hidden page section -->
+		<m:headerToolbar>
+			<m:Toolbar id="survey-header-toolbar" class="headerToolbar" height="100%">
+				<m:VBox id="survey-header-content" width="100%">
+					<!-- Logo  -->
+					<m:Image class="logo sapUiMediumMarginBottom" 
+						src="resources/project_logo.svg"/>
+					<!-- Title & Progress Bar - flex container:
+						* Progress Bar will wrap above Title if not enough horizontal space -->
+					<m:HBox class="sapUiSmallMarginBottom" 
+						alignItems="Center" 
+						justifyContent="SpaceBetween"
+						wrap="WrapReverse"
+						visible="{
+							parts: [
+								'user>/form/current_page',
+								'user>/form/page_count'
+							],
+							formatter: '.formatter.isSmallerThan'
+						}">
+						<!-- Title -->
+						<m:Title class="headerTitle" 
+							text="{survey>/data/title}"/>
+						<!-- Progress Bar - 
+							* sap.m.Label control used as dummy for customized CSS solution, but for all intents and purposes any control would do here. Perhaps a pure HTML tag even better
+							* "Progress Bar" changes dynamically via CSS variables and will change based on current CSS variable '-value_progressbar' numeric value 
+								Not perfect because the percentage <XX>% label is not visible on small percentages and probably over complicated this part but just wanted to show
+								how I would create relatively simple and easily utilizable dynamic CSS elements without using bloat-ish code (only thing needed here is to change single
+								semi-global CSS variable from anywhere in code and/or attach its value to a model or something) 
+							* Also I just hard-coded the '92%' label for simplicity but with extra time I could two-way map the label to CSS variable that currently does all the magic
+							* In real world a nice smooth CSS animation would be nice to have here as well but didn't feel like creating one haha -->
+						<m:Label class="headerProgressBar" 
+							text="{i18n>labelValueProgressBar}"/>
+					</m:HBox>
+					<!-- Description - 
+						* I wrote a comment above function 'formatHtml' declaration but essentially this is the easiest responsive text solution I could come up with in short manner;
+						* since text includes HTML tags a different control would probably be more appropriate but we would need to think a little on how to make inline texts responsive -->
+					<m:Text class="sapUiLargeMarginBottom" width="100%"
+						text="{
+							path: 'survey>/data/pages/0/subttitle',
+							formatter: '.formatter.formatHtml'
+						}"
+						visible="{
+							parts: [
+								'user>/form/current_page',
+								'user>/form/page_count'
+							],
+							formatter: '.formatter.isSmallerThan'
+						}"/>
+				</m:VBox>
+			</m:Toolbar>
+		</m:headerToolbar>
+
+		<!-- Content -->
+		<m:content>
+			<!-- Survey page - list container 
+				* Now this is not how I would do it in real world and just went for the easiest approach for the sake of simplicity:
+					1. Even though each page would share the same template, I would not put them in this hacky list format but 
+						implement a proper paging navigation/router/wizard/whatever that also works with web-browser 'Back' and 'Forward' button 
+					2. In case of SAPUI5 there are a couple proper ways and many different dedicated controls that track user interaction via paging, i.e. current page,
+						however for this simple task I reckon the main point was just to see how to apply model binding and data context, therefore treating
+				 		these API 'pages' as simple data objects within a single view and iterating through their properties was the way I opted to solve it -->
+			<m:List id="survey-page-container"
+				showSeparators="None"
+				items="{survey>/data/pages}">
+				<m:CustomListItem>
+					<!-- Question block - list container 
+						* In my hacky solution all question pages are rendered in DOM but only the currently active page will be visible in UI, rest are hidden -->
+					<m:List id="survey-block-container" 
+						showSeparators="None"
+						items="{survey>questions}"
+						visible="{
+							parts: [
+								'survey>',
+								'user>/form/current_page'
+							],
+							formatter: '.isCurrentPage'
+						}">
+						<m:CustomListItem>
+							<!-- Question block template -->
+							<core:Fragment fragmentName='my.app.fragment.SurveyBlock' type='XML'/>
+						</m:CustomListItem>
+					</m:List>
+				</m:CustomListItem>
+			</m:List>
+
+			<!-- Last page - flex container 
+				* In my hacky solution last page is always rendered in DOM but only visible if currently active page is the last one -->
+			<m:VBox id="survey-last-page-container" class="sapUiMediumMarginBottom"
+				visible="{
+					parts: [
+						'user>/form/current_page',
+						'user>/form/page_count'
+					],
+					formatter: '.formatter.isEqual'
+				}">
+				<m:Text class="headerTitle sapUiSmallMarginBottom" text="{survey>/data/completed_heading}"/>
+				<m:Text text="{survey>/data/completed_text}"/>
+			</m:VBox>
+
+			<!-- Survey buttons - flex container 
+				* A dedicated footer would probably work better but this gets the job done as well -->
+			<m:HBox id="survey-footer-ribbon-container"
+				justifyContent="SpaceBetween">
+				<!-- Previous page button
+					* Button will be disabled on first 'page' 
+					* Although it would probably make sense to hide the button on last page as well after survey is completed, 
+						I left it as is just so that you don't have to refresh the page to get back -->
+				<m:Button class="actionButton previous"
+					type="Unstyled"
+					iconFirst="true"
+					icon="sap-icon://navigation-left-arrow"
+					text="{survey>/data/page_prev_text}"
+					press="onPressButtonNavigateBack"
+					enabled="{
+						path: 'user>/form/current_page',
+						formatter: '.formatter.isBiggerThanZero'
+					}"/>
+				<!-- Next page button  
+					* Text will change based on current 'page' number
+					* Button will be invisible on last 'page' -->
+				<m:Button class="actionButton next"
+					type="Unstyled"
+					iconFirst="false"
+					icon="sap-icon://navigation-right-arrow"
+					text="{
+						parts: [
+							'survey>/data/page_next_text',
+							'survey>/data/complete_text',
+							'user>/form/current_page',
+							'user>/form/page_count'
+						],
+						formatter: '.formatter.getNextButtonText'
+					}"
+					press="onPressButtonNavigateNext"
+					visible="{
+						parts: [
+							'user>/form/current_page',
+							'user>/form/page_count'
+						],
+						formatter: '.formatter.isSmallerThan'
+					}"/>
+			</m:HBox>
+		</m:content>
+	</m:Panel>
+
+</core:FragmentDefinition>

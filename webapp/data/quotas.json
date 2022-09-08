@@ -1,0 +1,1414 @@
+{
+  "data": [
+    {
+      "title": "female",
+      "dimensions": [
+        {
+          "title": "20-29",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 804,
+                  "responseRate": 14
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 792,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 547,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 819,
+                  "responseRate": 13
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 335,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 685,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 705,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 146,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 599,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 723,
+                  "responseRate": 12
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 130,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 476,
+                  "responseRate": 10
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 946,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 604,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 938,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 180,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 449,
+                  "responseRate": 2
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 674,
+                  "responseRate": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "30-39",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 860,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 169,
+                  "responseRate": 15
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 44,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 391,
+                  "responseRate": 2
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 9,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 819,
+                  "responseRate": 4
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 844,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 659,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 46,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 228,
+                  "responseRate": 8
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 939,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 346,
+                  "responseRate": 0
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 518,
+                  "responseRate": 15
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 335,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 545,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 708,
+                  "responseRate": 15
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 350,
+                  "responseRate": 14
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 836,
+                  "responseRate": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "40-49",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 299,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 816,
+                  "responseRate": 10
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 31,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 936,
+                  "responseRate": 15
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 917,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 249,
+                  "responseRate": 11
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 552,
+                  "responseRate": 4
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 175,
+                  "responseRate": 10
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 644,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 327,
+                  "responseRate": 10
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 332,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 695,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 629,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 28,
+                  "responseRate": 13
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 668,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 952,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 259,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 58,
+                  "responseRate": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "50-59",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 866,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 436,
+                  "responseRate": 4
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 783,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 196,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 79,
+                  "responseRate": 12
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 488,
+                  "responseRate": 0
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 308,
+                  "responseRate": 7
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 866,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 646,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 502,
+                  "responseRate": 11
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 192,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 418,
+                  "responseRate": 11
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 224,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 486,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 462,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 333,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 501,
+                  "responseRate": 2
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 207,
+                  "responseRate": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "60-69",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 138,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 124,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 291,
+                  "responseRate": 14
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 844,
+                  "responseRate": 15
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 948,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 283,
+                  "responseRate": 4
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 218,
+                  "responseRate": 7
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 679,
+                  "responseRate": 11
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 98,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 37,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 106,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 856,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 837,
+                  "responseRate": 12
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 612,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 533,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 256,
+                  "responseRate": 12
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 653,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 520,
+                  "responseRate": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "male",
+      "dimensions": [
+        {
+          "title": "20-29",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 511,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 837,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 885,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 260,
+                  "responseRate": 14
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 861,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 519,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 861,
+                  "responseRate": 2
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 727,
+                  "responseRate": 8
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 454,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 854,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 503,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 190,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 915,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 884,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 895,
+                  "responseRate": 7
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 636,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 708,
+                  "responseRate": 4
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 45,
+                  "responseRate": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "30-39",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 588,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 719,
+                  "responseRate": 10
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 755,
+                  "responseRate": 2
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 921,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 937,
+                  "responseRate": 0
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 949,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 838,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 801,
+                  "responseRate": 5
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 904,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 607,
+                  "responseRate": 11
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 78,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 738,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 709,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 428,
+                  "responseRate": 14
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 573,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 812,
+                  "responseRate": 13
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 665,
+                  "responseRate": 2
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 606,
+                  "responseRate": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "40-49",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 885,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 179,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 54,
+                  "responseRate": 14
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 572,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 719,
+                  "responseRate": 15
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 0,
+                  "responseRate": 0
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 145,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 706,
+                  "responseRate": 12
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 517,
+                  "responseRate": 6
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 770,
+                  "responseRate": 4
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 33,
+                  "responseRate": 12
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 615,
+                  "responseRate": 13
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 934,
+                  "responseRate": 10
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 647,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 833,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 21,
+                  "responseRate": 4
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 79,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 159,
+                  "responseRate": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "50-59",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 218,
+                  "responseRate": 11
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 208,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 509,
+                  "responseRate": 7
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 786,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 135,
+                  "responseRate": 15
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 108,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 430,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 2,
+                  "responseRate": 9
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 307,
+                  "responseRate": 15
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 890,
+                  "responseRate": 8
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 259,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 203,
+                  "responseRate": 8
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 394,
+                  "responseRate": 7
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 537,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 694,
+                  "responseRate": 13
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 191,
+                  "responseRate": 1
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 544,
+                  "responseRate": 0
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 398,
+                  "responseRate": 13
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "60-69",
+          "dimensions": [
+            {
+              "title": "at_burgenland",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 275,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 687,
+                  "responseRate": 0
+                }
+              ]
+            },
+            {
+              "title": "at_vienna",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 274,
+                  "responseRate": 1
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 27,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_loweraustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 284,
+                  "responseRate": 9
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 162,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_upperaustria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 258,
+                  "responseRate": 15
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 413,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_carinthia",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 684,
+                  "responseRate": 5
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 542,
+                  "responseRate": 0
+                }
+              ]
+            },
+            {
+              "title": "at_styria",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 741,
+                  "responseRate": 3
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 671,
+                  "responseRate": 3
+                }
+              ]
+            },
+            {
+              "title": "at_salzburg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 300,
+                  "responseRate": 4
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 25,
+                  "responseRate": 7
+                }
+              ]
+            },
+            {
+              "title": "at_tyrol",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 741,
+                  "responseRate": 8
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 59,
+                  "responseRate": 6
+                }
+              ]
+            },
+            {
+              "title": "at_vorarlberg",
+              "dimensions": [
+                {
+                  "title": "mit Matura",
+                  "possibleInvites": 677,
+                  "responseRate": 14
+                },
+                {
+                  "title": "ohne Matura",
+                  "possibleInvites": 610,
+                  "responseRate": 14
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}}

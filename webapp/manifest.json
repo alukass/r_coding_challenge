@@ -67,12 +67,24 @@
 					],
 					"fallbackLocale": ""
 				}
+			},
+			"survey": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"user": {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
 			"css": [
 				{
-					"uri": "css/style.css"
+					"uri": "css/variables.css"
+				},
+				{
+					"uri": "css/overrides.css"
+				},
+				{
+					"uri": "css/level_one.css"
 				}
 			]
 		}

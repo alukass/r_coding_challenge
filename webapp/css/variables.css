@@ -1,0 +1,40 @@
+/*
+	CSS variables
+
+	all values are basically eye-balled, no particular reason on why these are the ones I chosen. Except for maybe Logo background for which I used color picker on the SVG
+*/
+.appContainer {
+	/* In real world I would define a color pallette(-s) etc. and pick values from there, which I wanted to do initially but kind of dismissed the idea in the end
+		which is the reason why variables here seem kind of inconsistent and messy. Point is I would want to make it as customizable as possible without the need
+		to hard code CSS styles but have sort of a list of available style options to pick from (and the app would happily adapt) 
+		
+		If you want to check you can play around with the values through browser element inspector, 
+		to easily find this class just type 'sap.ui.getCore().byId('__xmlview0--app-container').getDomRef()' in browser console and reveal it
+	*/
+	--color_default: #ffffff;
+	--color_gray: #aaaaaa;
+	--color_inverted: var(--color_default);
+	--background_color_default: var(--color_default);
+	--background_color_emphasized: #d3d3d3;
+	--background_color_logo: #e73446;
+	--background_color_button: var(--background_color_logo);
+	--background_color_button_disabled: #f5f5f5;
+	--border_style_button: solid;
+	--border_width_button: 1px;
+	--opacity_inner: 0.8;
+	--opacity_inner_hover: 1;
+	--height_logo: 4.2rem;
+	--font_family_button: Verdana;
+	--font_size_inner: 0.8rem;
+	--font_size_header: 1.6rem;
+	--font_size_subheader: 1rem;
+	--font_size_progressbar: var(--font_size_inner);
+	--height_progressbar: 1rem;
+	--width_progressbar: calc(1px * var(--value_progressbar_max));
+	--width_progressbar_label: 16px;
+	/* These values ensure dynamic progress bar rendering. These can be changed to whatever desired and the progress bar will work as long as they stay as Integers;
+	 	--value_progressbar_max: 	should be treated as number of desired pixels for entire width of progress bar
+		--value_progressbar: 		should be treated as percentage value of progress bar in numeric region {0 =< ... =< 100} */
+	--value_progressbar_max: 280;
+	--value_progressbar: 92;
+}

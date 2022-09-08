@@ -1,0 +1,56 @@
+<core:FragmentDefinition 
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m">
+
+	<!-- Question block - flex container -->
+	<m:VBox id="question-container">
+		<!-- Question Title - flex container -->
+		<m:HBox id="question-title-container" class="sapUiTinyMarginBottom">
+			<!-- Question asterix -
+				* If I understood correctly the little star near title means that the question is required to be filled in,
+					so in this case I made it visible only if the API parameter 'is_required' value is boolean 'true', otherwise it won't appear 
+				* Also the 'asterix' in example PNG is an icon, which would be trivial to implement with sap.m.Icon control but for sake of simplicity 
+					I just used the keyboard typed symbol and sap.m.Label control -->
+			<m:Label id="question-title-asterix" class="sapUiTinyMarginEnd questionRequired"
+				text="{i18n>labelRequiredQuestionSymbol}" 
+				visible="{
+					path: 'survey>is_required',
+					formatter: '.formatter.isBooleanTrue'
+				}"/>
+			<!-- Question Title -->
+			<m:Text id="question-title" class="questionTitle"
+				text="{survey>name}"/>
+		</m:HBox>
+		<!-- Question Description -
+			* will only be visible if returned API parameter 'public_description' has value -->
+		<m:Text id="question-description" class="sapUiTinyMarginBottom questionDescription" 
+			text="{survey>public_description}"
+			visible="{
+				path: 'survey>public_description',
+				formatter: '.formatter.doubleNot'
+			}"/>
+		<!-- User Input -->
+		<m:ComboBox id="question-answer-combobox" class="sapUiMediumMarginBottom questionComboBox" width="100%"
+			items="{survey>choices}">
+			<!-- Single choice list - 
+				* Due to inconvenient data structure where answers are not defined by single key pairings,
+					here I implement a quick work-around to extract the keys and answers manually. In real world the solution should obviously be more robust;
+				* In this particular case keys would be either 'yes' or 'no' and answers would be that key's pair - 'ja' or 'nein' respectively; 
+				* Point is if we needed logic where we wanted to extract the actual answers through code we would most likely extract and work with selected keys - 
+					not the german language text inputs  -->
+			<core:ListItem id="question-combobox-item"
+				key="{
+					path: 'survey>',
+					formatter: '.formatter.getFirstObjectKey'
+				}"
+				text="{
+					parts: [
+						'survey>yes',
+						'survey>no'
+					],
+					formatter: '.formatter.getFirstTruthyArgumentValue'
+				}" />
+		</m:ComboBox>
+	</m:VBox>
+
+</core:FragmentDefinition>
