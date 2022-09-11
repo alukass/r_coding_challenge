@@ -19,7 +19,7 @@
 							</m:IconTabFilter>
 							<!-- level_two -->
 							<m:IconTabFilter text="{i18n>tabLabelLevel2}">
-								<m:Text text="{i18n>TODO create content}"/>
+								<core:Fragment fragmentName='my.app.fragment.Table' type='XML'/>
 							</m:IconTabFilter>
 						</m:items>
 					</m:IconTabBar>

@@ -1,0 +1,300 @@
+<core:FragmentDefinition 
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:table="sap.ui.table"
+	xmlns:unified="sap.ui.unified">
+
+<!-- Notes:
+		1. OK so I picked a table from SAPUI5 library and tried to customize it to resemble table example in example PNG. I thought TreeTable would work best because it has built-in 
+			support for tree-like data structure albeit of limited scope. In the end there are some differences and I added some extra UI flavor from myself. 
+		2. Because of these mentioned limitations potentially a better and much robust solution would be to:
+			a. Customise Table control itself by extending it and adding extra implementation
+			b. Alternatively pick a simpler and more basic Table control and just apply data in different format, for example recalculate the data model on each column header grouping
+			c. Maybe there is another way that I can't think of at the moment. Either way performance and UI should be the main focus, which currently it is not
+		3. Table is collapsed by default. You can Expand it manually by clicking the built-in 'Expand' buttons on root element on the left side or by clicking column headers
+		4. Clicking on column headers will either collapse to data to previous column or expand to current column (as per coding challenge instructions or at least how I understood them)
+		5. I utilized a lot of CustomData aggregations and model bindings to achieve the goals of the challenge but with more thought and unit testing factory methods would probably work better.
+			In real world adding so many formatters could slow down the app quite a bit since there would be countless data updates constantly triggering but in this limited scope the hit is
+			barely noticeable if at all
+		6. Extra flavor I added: 
+			i: formatted cell texts and colored ribbons on collapsed nodes
+			ii: custom 'Expand' button indicator that mimics the SAPUI5 one for consistency 
+			iii: merged cells (not available on SAPUI5 TreeTable by default) but there are minor visual issues, namely double borders causing some cells to appear thicker
+-->
+
+	<m:VBox id="quotas-flex-container">
+		<table:TreeTable id="quotas-table" class="quotasTable"
+			columnSelect="onPressGroupColumn"
+			visibleRowCountMode="Auto"
+			minAutoRowCount="24"
+			enableColumnReordering="false"
+			selectionMode="None"
+			rowsUpdated="mergeCells"
+			rows="{
+				path: 'quotas>/data',
+				parameters: {
+					arrayNames: ['dimensions']
+				}
+			}">
+			<table:columns>
+
+				<!-- Custom expander column 1/7: 
+					* Idea was to build upon SAPUI5 TreeTable logic where root data element has a built-in expander button icon;
+						Since I wanted to keep the button but not force it on only the first dimension, i.e. it would always be seen on Female/Male column (which felt odd), 
+						I thought it would be nice if we just added additional column where all Dimension titles are generated and can be expanded in dedicated 'expander' column
+					* Alternatively if we wanted to keep the buttons but not this column we could just have made it a lot smaller in width and hidden text values VIA formatter, 
+						keeping it icon-only
+					* Of course we could also just hide this column altogether -->
+				<table:Column id="table-column-0" width="12rem">
+					<m:Label text="{i18n>tableColumnExpander}" />
+					<table:template>
+						<m:Text text="{quotas>title}"/>
+					</table:template>
+				</table:Column>
+
+				<!-- Dimension 1 column 2/7 -->
+				<table:Column id="table-column-1">
+					<m:Label text="{i18n>tableColumnDimension1}" class="columnLabel"/>
+					<table:template>
+						<!-- Show dimension title text only if column on correct dimension -->
+						<m:Text  
+							text="{
+								parts: [
+									'quotas>title',
+									'quotas>level',
+									'i18n>dummy0',
+									'i18n>tableRowAll'
+								],
+								formatter: '.formatter.getCellTextIfVisible'
+							}">
+							<m:customData>
+								<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+									* format cells if text value is collapsed  (Alle) -->
+								<core:CustomData 
+									key="collapsed" 
+									value="{
+										parts: [
+											'quotas>level',
+											'i18n>dummy0'
+										],
+										formatter: '.formatter.isSmallerThanToString'
+									}" 
+									writeToDom="true" />
+							</m:customData>
+						</m:Text>
+					</table:template>
+					<table:customData>
+						<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+							* add customized 'Expand' arrow on column header that rotates based on whether the column was grouped -->
+						<core:CustomData 
+							key="expanded" 
+							value="{
+								parts: [
+									'user>/table/expanded_level', 
+									'i18n>dummy1'
+								],
+								formatter: '.formatter.isBiggerOrEqualToString'
+							}" 
+							writeToDom="true" />
+					</table:customData>
+				</table:Column>
+
+				<!-- Dimension 2 column 3/7 -->
+				<table:Column id="table-column-2">
+					<m:Label text="{i18n>tableColumnDimension2}" class="columnLabel"/>
+					<table:template>
+						<!-- Show dimension title text only if column on correct dimension -->
+						<m:Text class="tableCellLabelFormatted" 
+							text="{
+								parts: [
+									'quotas>title',
+									'quotas>level',
+									'i18n>dummy1',
+									'i18n>tableRowAll'
+								],
+								formatter: '.formatter.getCellTextIfVisible'
+							}">
+							<m:customData>
+								<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+									* format cells if text value is collapsed  (Alle) -->
+								<core:CustomData 
+									key="collapsed" 
+									value="{
+										parts: [
+											'quotas>level',
+											'i18n>dummy1'
+										],
+										formatter: '.formatter.isSmallerThanToString'
+									}" 
+									writeToDom="true" />
+							</m:customData>
+						</m:Text>
+					</table:template>
+					<table:customData>
+						<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+							* add customized 'Expand' arrow on column header that rotates based on whether the column was grouped -->
+						<core:CustomData 
+							key="expanded" 
+							value="{
+								parts: [
+									'user>/table/expanded_level', 
+									'i18n>dummy2'
+								],
+								formatter: '.formatter.isBiggerOrEqualToString'
+							}" 
+							writeToDom="true" />
+					</table:customData>
+				</table:Column>
+
+				<!-- Dimension 3 column 4/7 -->
+				<table:Column id="table-column-3">
+					<m:Label text="{i18n>tableColumnDimension3}" class="columnLabel"/>
+					<table:template>
+						<!-- Show dimension title text only if column on correct dimension -->
+						<m:Text class="tableCellLabelFormatted"
+							text="{
+								parts: [
+									'quotas>title',
+									'quotas>level',
+									'i18n>dummy2',
+									'i18n>tableRowAll'
+								],
+								formatter: '.formatter.getCellTextIfVisible'
+							}">
+							<m:customData>
+								<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+									* format cells if text value is collapsed  (Alle) -->
+								<core:CustomData 
+									key="collapsed" 
+									value="{
+										parts: [
+											'quotas>level',
+											'i18n>dummy2'
+										],
+										formatter: '.formatter.isSmallerThanToString'
+									}" 
+									writeToDom="true" />
+							</m:customData>
+						</m:Text>
+					</table:template>
+					<table:customData>
+						<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+							* add customized 'Expand' arrow on column header that rotates based on whether the column was grouped -->
+						<core:CustomData 
+							key="expanded" 
+							value="{
+								parts: [
+									'user>/table/expanded_level', 
+									'i18n>dummy3'
+								],
+								formatter: '.formatter.isBiggerOrEqualToString'
+							}" 
+							writeToDom="true" />
+					</table:customData>
+				</table:Column>
+
+				<!-- Dimension 4 column 5/7 -->
+				<table:Column id="table-column-4">
+					<m:Label text="{i18n>tableColumnDimension4}" class="columnLabel"/>
+					<table:template>
+						<!-- Show dimension title text only if column on correct dimension -->
+						<m:Text class="tableCellLabelFormatted"
+							text="{
+								parts: [
+									'quotas>title',
+									'quotas>level',
+									'i18n>dummy3',
+									'i18n>tableRowAll'
+								],
+								formatter: '.formatter.getCellTextIfVisible'
+							}">
+							<m:customData>
+								<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+									* format cells if text value is collapsed  (Alle) -->
+								<core:CustomData 
+									key="collapsed" 
+									value="{
+										parts: [
+											'quotas>level',
+											'i18n>dummy3'
+										],
+										formatter: '.formatter.isSmallerThanToString'
+									}" 
+									writeToDom="true" />
+							</m:customData>
+						</m:Text>
+					</table:template>
+					<table:customData>
+						<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+							* add customized 'Expand' arrow on column header that rotates based on whether the column was grouped -->
+						<core:CustomData 
+							key="expanded" 
+							value="{
+								parts: [
+									'user>/table/expanded_level', 
+									'i18n>dummy4'
+								],
+								formatter: '.formatter.isBiggerOrEqualToString'
+							}" 
+							writeToDom="true" />
+					</table:customData>
+				</table:Column>
+
+				<!-- Distribution column 6/7 -->
+				<table:Column id="table-column-5" width="6rem">
+					<m:Label text="{i18n>tableColumnLabelDistribution}"/>
+						<table:template>
+							<m:Text class="tableCellLabelFormatted number"
+								text="{
+									parts: [
+										'quotas>',
+										'quotas>responseRate'
+									],
+									formatter: '.formatter.averageRecursively'
+								}">
+								<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+									* add indicator that this data has been calculated so we can more easily distinguish original data -->
+								<m:customData>
+									<core:CustomData
+										key="calculated"
+										value="{
+											path: 'quotas>responseRate',
+											formatter: '.formatter.notToString'
+										}" 
+										writeToDom="true" />
+								</m:customData>
+							</m:Text>
+						</table:template>
+				</table:Column>
+
+				<!-- Target column 7/7 -->
+				<table:Column id="table-column-6" width="6rem">
+					<m:Label text="{i18n>tableColumnLabelTarget}"/>
+					<table:template>
+						<m:Text class="tableCellLabelFormatted number" 
+							text="{
+								parts: [
+									'quotas>',
+									'quotas>possibleInvites'
+								],
+								formatter: '.formatter.sumRecursively'
+							}">
+							<!-- Attach custom data to DOM from model so we can add custom CSS styles based on model state 
+								* add indicator that this data has been calculated so we can more easily distinguish original data -->
+							<m:customData>
+								<core:CustomData
+									key="calculated"
+									value="{
+										path: 'quotas>possibleInvites',
+										formatter: '.formatter.notToString'
+									}" 
+									writeToDom="true" />
+							</m:customData>
+						</m:Text>
+					</table:template>
+				</table:Column>
+
+			</table:columns>
+		</table:TreeTable>
+	</m:VBox>
+</core:FragmentDefinition>

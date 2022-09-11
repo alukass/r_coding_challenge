@@ -14,11 +14,13 @@
 	--color_default: #ffffff;
 	--color_gray: #aaaaaa;
 	--color_inverted: var(--color_default);
+	--border_color_table: 0.0625rem solid #e5e5e5; /* SAPUI5 template border dtyles from variable sap.ui.core.theming.Parameters.get('sapList_BorderColor') and 'sapButton_BorderWidth' */
 	--background_color_default: var(--color_default);
 	--background_color_emphasized: #d3d3d3;
 	--background_color_logo: #e73446;
 	--background_color_button: var(--background_color_logo);
 	--background_color_button_disabled: #f5f5f5;
+	--background_color_icon: #0854a0; /* SAPUI5 template color from variable sap.ui.core.theming.Parameters.get('sapButton_IconColor') */
 	--border_style_button: solid;
 	--border_width_button: 1px;
 	--opacity_inner: 0.8;

@@ -3,9 +3,9 @@
 	xmlns:m="sap.m">
 
 	<!-- Question block - flex container -->
-	<m:VBox id="question-container">
+	<m:VBox id="question-flex-container">
 		<!-- Question Title - flex container -->
-		<m:HBox id="question-title-container" class="sapUiTinyMarginBottom">
+		<m:HBox id="question-title-flex-container" class="sapUiTinyMarginBottom">
 			<!-- Question asterix -
 				* If I understood correctly the little star near title means that the question is required to be filled in,
 					so in this case I made it visible only if the API parameter 'is_required' value is boolean 'true', otherwise it won't appear 
@@ -38,7 +38,7 @@
 				* In this particular case keys would be either 'yes' or 'no' and answers would be that key's pair - 'ja' or 'nein' respectively; 
 				* Point is if we needed logic where we wanted to extract the actual answers through code we would most likely extract and work with selected keys - 
 					not the german language text inputs  -->
-			<core:ListItem id="question-combobox-item"
+			<core:ListItem id="question-answer-combobox-item"
 				key="{
 					path: 'survey>',
 					formatter: '.formatter.getFirstObjectKey'

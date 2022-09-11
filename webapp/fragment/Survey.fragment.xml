@@ -1,10 +1,10 @@
-<core:FragmentDefinition id="fsdfs"
+<core:FragmentDefinition
 	xmlns:core="sap.ui.core"
 	xmlns:m="sap.m" 
 	>
 
 	<!-- Survey page -->
-	<m:Panel id="survey-container" class="level_one">
+	<m:Panel id="survey-panel" class="level_one">
 
 		<!-- Header 
 			* After I finished this task I though it would be nicer if parts of this header would be hidden after the survey has been completed,
@@ -12,7 +12,7 @@
 				even though it would probably make more sense to just edit this existing header text instead of revealing a hidden page section -->
 		<m:headerToolbar>
 			<m:Toolbar id="survey-header-toolbar" class="headerToolbar" height="100%">
-				<m:VBox id="survey-header-content" width="100%">
+				<m:VBox id="survey-header-flex-container" width="100%">
 					<!-- Logo  -->
 					<m:Image class="logo sapUiMediumMarginBottom" 
 						src="resources/project_logo.svg"/>
@@ -64,94 +64,98 @@
 
 		<!-- Content -->
 		<m:content>
-			<!-- Survey page - list container 
-				* Now this is not how I would do it in real world and just went for the easiest approach for the sake of simplicity:
-					1. Even though each page would share the same template, I would not put them in this hacky list format but 
-						implement a proper paging navigation/router/wizard/whatever that also works with web-browser 'Back' and 'Forward' button 
-					2. In case of SAPUI5 there are a couple proper ways and many different dedicated controls that track user interaction via paging, i.e. current page,
-						however for this simple task I reckon the main point was just to see how to apply model binding and data context, therefore treating
-				 		these API 'pages' as simple data objects within a single view and iterating through their properties was the way I opted to solve it -->
-			<m:List id="survey-page-container"
-				showSeparators="None"
-				items="{survey>/data/pages}">
-				<m:CustomListItem>
-					<!-- Question block - list container 
-						* In my hacky solution all question pages are rendered in DOM but only the currently active page will be visible in UI, rest are hidden -->
-					<m:List id="survey-block-container" 
-						showSeparators="None"
-						items="{survey>questions}"
-						visible="{
-							parts: [
-								'survey>',
-								'user>/form/current_page'
-							],
-							formatter: '.isCurrentPage'
-						}">
-						<m:CustomListItem>
-							<!-- Question block template -->
-							<core:Fragment fragmentName='my.app.fragment.SurveyBlock' type='XML'/>
-						</m:CustomListItem>
-					</m:List>
-				</m:CustomListItem>
-			</m:List>
+			<!-- <m:VBox> -->
+				<!-- Survey page - list container 
+					* Now this is not how I would do it in real world and just went for the easiest approach for the sake of simplicity:
+						1. Even though each page would share the same template, I would not put them in this hacky list format but 
+							implement a proper paging navigation/router/wizard/whatever that also works with web-browser 'Back' and 'Forward' button 
+						2. In case of SAPUI5 there are a couple proper ways and many different dedicated controls that track user interaction via paging, i.e. current page,
+							however for this simple task I reckon the main point was just to see how to apply model binding and data context, therefore treating
+							these API 'pages' as simple data objects within a single view and iterating through their properties was the way I opted to solve it -->
+				<m:List id="survey-page-list"
+					showSeparators="None"
+					items="{survey>/data/pages}">
+					<m:CustomListItem>
+						<!-- Question block - list container 
+							* In my hacky solution all question pages are rendered in DOM but only the currently active page will be visible in UI, rest are hidden -->
+						<m:List id="survey-block-list" 
+							showSeparators="None"
+							items="{survey>questions}"
+							visible="{
+								parts: [
+									'survey>',
+									'user>/form/current_page'
+								],
+								formatter: '.isCurrentPage'
+							}">
+							<m:CustomListItem>
+								<!-- Question block template -->
+								<core:Fragment fragmentName='my.app.fragment.SurveyBlock' type='XML'/>
+							</m:CustomListItem>
+						</m:List>
+					</m:CustomListItem>
+				</m:List>
 
-			<!-- Last page - flex container 
-				* In my hacky solution last page is always rendered in DOM but only visible if currently active page is the last one -->
-			<m:VBox id="survey-last-page-container" class="sapUiMediumMarginBottom"
-				visible="{
-					parts: [
-						'user>/form/current_page',
-						'user>/form/page_count'
-					],
-					formatter: '.formatter.isEqual'
-				}">
-				<m:Text class="headerTitle sapUiSmallMarginBottom" text="{survey>/data/completed_heading}"/>
-				<m:Text text="{survey>/data/completed_text}"/>
-			</m:VBox>
-
-			<!-- Survey buttons - flex container 
-				* A dedicated footer would probably work better but this gets the job done as well -->
-			<m:HBox id="survey-footer-ribbon-container"
-				justifyContent="SpaceBetween">
-				<!-- Previous page button
-					* Button will be disabled on first 'page' 
-					* Although it would probably make sense to hide the button on last page as well after survey is completed, 
-						I left it as is just so that you don't have to refresh the page to get back -->
-				<m:Button class="actionButton previous"
-					type="Unstyled"
-					iconFirst="true"
-					icon="sap-icon://navigation-left-arrow"
-					text="{survey>/data/page_prev_text}"
-					press="onPressButtonNavigateBack"
-					enabled="{
-						path: 'user>/form/current_page',
-						formatter: '.formatter.isBiggerThanZero'
-					}"/>
-				<!-- Next page button  
-					* Text will change based on current 'page' number
-					* Button will be invisible on last 'page' -->
-				<m:Button class="actionButton next"
-					type="Unstyled"
-					iconFirst="false"
-					icon="sap-icon://navigation-right-arrow"
-					text="{
-						parts: [
-							'survey>/data/page_next_text',
-							'survey>/data/complete_text',
-							'user>/form/current_page',
-							'user>/form/page_count'
-						],
-						formatter: '.formatter.getNextButtonText'
-					}"
-					press="onPressButtonNavigateNext"
+				<!-- Last page - flex container 
+					* In my hacky solution last page is always rendered in DOM but only visible if currently active page is the last one -->
+				<m:VBox id="survey-last-page-flex-container" class="sapUiMediumMarginBottom"
 					visible="{
 						parts: [
 							'user>/form/current_page',
 							'user>/form/page_count'
 						],
-						formatter: '.formatter.isSmallerThan'
-					}"/>
-			</m:HBox>
+						formatter: '.formatter.isEqual'
+					}">
+					<m:Text class="headerTitle sapUiSmallMarginBottom" text="{survey>/data/completed_heading}"/>
+					<m:Text text="{survey>/data/completed_text}"/>
+				</m:VBox>
+
+				<!-- Survey buttons - flex container 
+					* A dedicated footer would probably work better but this gets the job done as well -->
+				<m:HBox id="survey-footer-flex-container"
+					justifyContent="SpaceBetween">
+					<!-- Previous page button
+						* Button will be disabled on first 'page' 
+						* Although it would probably make sense to hide the button on last page as well after survey is completed, 
+							I left it as is just so that you don't have to refresh the page to get back -->
+					<m:Button class="actionButton previous"
+						type="Unstyled"
+						iconFirst="true"
+						icon="sap-icon://navigation-left-arrow"
+						text="{survey>/data/page_prev_text}"
+						press="onPressButtonNavigateBack"
+						enabled="{
+							path: 'user>/form/current_page',
+							formatter: '.formatter.isBiggerThanZero'
+						}"/>
+					<!-- Next page button  
+						* Text will change based on current 'page' number
+						* Button will be invisible on last 'page' -->
+					<m:Button class="actionButton next"
+						type="Unstyled"
+						iconFirst="false"
+						icon="sap-icon://navigation-right-arrow"
+						text="{
+							parts: [
+								'survey>/data/page_next_text',
+								'survey>/data/complete_text',
+								'user>/form/current_page',
+								'user>/form/page_count'
+							],
+							formatter: '.formatter.getNextButtonText'
+						}"
+						press="onPressButtonNavigateNext"
+						visible="{
+							parts: [
+								'user>/form/current_page',
+								'user>/form/page_count'
+							],
+							formatter: '.formatter.isSmallerThan'
+						}"/>
+				</m:HBox>
+
+
+			<!-- </m:VBox> -->
 		</m:content>
 	</m:Panel>
 

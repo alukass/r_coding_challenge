@@ -71,6 +71,9 @@
 			"survey": {
 				"type": "sap.ui.model.json.JSONModel"
 			},
+			"quotas": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
 			"user": {
 				"type": "sap.ui.model.json.JSONModel"
 			}
@@ -85,6 +88,9 @@
 				},
 				{
 					"uri": "css/level_one.css"
+				},
+				{
+					"uri": "css/level_two.css"
 				}
 			]
 		}
