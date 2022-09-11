@@ -1,6 +1,3 @@
-# BasicApp
-Clean SAPUI5 template for testing purposes
-
 ## Preperations
 You need the ui5 CLI to run this app locally. See documentation - https://sap.github.io/ui5-tooling/
 
